@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>Document</title>
+
+        <link rel="stylesheet" href="css/main.css" />
+        <style>
+            .bttm {
+                transition: var(--transition);
+                will-change: transform;
+                text-transform: uppercase;
+                font-weight: 900;
+                color: var(--text);
+                text-shadow: 0 0 15px #9d822b;
+                font-size: 42px;
+            }
+            .bttm2 {
+                color: var(--text);
+                text-shadow: 0 0 15px #9d822b;
+            }
+        </style>
+
+        <script src="libs/gsap/gsap.min.js" defer></script>
+        <script src="libs/gsap/ScrollTrigger.min.js" defer></script>
+        <script src="libs/gsap/ScrollSmoother.min.js" defer></script>
+
+        <script src="js/app.js" defer></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="content">
+                <header class="main-header">
+                    <div class="layers">
+                        <div class="layer__header">
+                            <div class="layers__caption">
+                                Welcome
+                                <!-- Тавтай морил😎 -->
+                            </div>
+                            <div class="layers__title" id="greeting">
+                                <!-- Fairy Forest -->
+                            </div>
+                        </div>
+                        <div
+                            class="layer layers__base"
+                            style="background-image: url(img/layer-base.png)"
+                        ></div>
+                        <div
+                            class="layer layers__middle"
+                            style="background-image: url(img/layer-middle.png)"
+                        ></div>
+                        <div
+                            class="layer layers__front"
+                            style="background-image: url(img/layer-front.png)"
+                        ></div>
+                    </div>
+                </header>
+
+                <article
+                    class="main-article"
+                    style="background-image: url(img/dungeon.jpg)"
+                >
+                    <div class="main-article__content" style="margin-top: 60px">
+                        <h2 class="main-article__header bttm">Goodnight😴</h2>
+                        <p class="main-article__paragraph bttm2">
+                            Харанхуй шөнийн дараа хүртэл үүр цайж гэгээ ордог
+                            шиг амьдралд чинь хичнээн хэцүү хар бараан бууж
+                            өгмөөр хэцүү байсан ч хичээгээрэй😇
+                        </p>
+                    </div>
+                    <!-- <div class="copy">© WebDesign Master</div> -->
+                </article>
+            </div>
+        </div>
+        <script>
+            function showGreeting() {
+                var currentTime = new Date();
+                var currentHour = currentTime.getHours();
+                var greeting;
+
+                if (currentHour >= 12 && currentHour < 18) {
+                    greeting = "Good afternoon!";
+                } else if (currentHour >= 18 || currentHour < 5) {
+                    greeting = "Good evening!";
+                } else {
+                    greeting = "Good morning!";
+                }
+
+                document.getElementById("greeting").innerHTML = greeting;
+            }
+            showGreeting();
+        </script>
+    </body>
+</html>
